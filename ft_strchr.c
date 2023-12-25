@@ -6,7 +6,7 @@
 /*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 08:37:29 by junesalaber       #+#    #+#             */
-/*   Updated: 2023/12/25 09:30:47 by junesalaber      ###   ########.fr       */
+/*   Updated: 2023/12/25 19:42:51 by junesalaber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0')
+	while (*s != (char)c)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
+		if (*s == '\0')
+			return (NULL);
 		s++;
 	}
-	return (NULL);
+	return ((char *)s);
 }
 
 /*
 int main(void)
 {
     char    text[] = "hola";
-    int     a = 'x';
+    int     a = 'o';
 
     printf("%s\n", ft_strchr(text, a));
     return (0);
