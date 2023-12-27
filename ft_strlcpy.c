@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 09:42:49 by jsalaber          #+#    #+#             */
-/*   Updated: 2023/12/15 10:38:20 by jsalaber         ###   ########.fr       */
+/*   Updated: 2023/12/27 17:47:40 by junesalaber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
