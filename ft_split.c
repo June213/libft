@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:49:44 by junesalaber       #+#    #+#             */
-/*   Updated: 2023/12/28 13:16:45 by jsalaber         ###   ########.fr       */
+/*   Updated: 2023/12/28 21:12:15 by junesalaber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,21 @@
 
 static int	ft_allocate(char const *s, char c)
 {
-	char		*temp;
-	size_t		count;
+	int		subs;
+	int		count;
 
-	temp = s;
-	count = 1;
-	while (temp != '\0')
+	count = 0;
+	subs = 0;
+	while (*s)
 	{
-		if (temp == c)
+		if (*s != c && !subs)
+		{
+			subs = 1;
 			count++;
-		temp++;
+		}
+		else if (*s == c)
+			subs = 0;
+		s++;
 	}
 	return (count);
 }
@@ -31,39 +36,81 @@ static int	ft_allocate(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char		**str;
-	char		start;
+	char		*start;
 	int			len;
 	int			i;
+	int			count;
 
-	str = (char *)malloc((ft_allocate(s, c)) * sizeof(char));
+	count = ft_allocate(s, c);
+	str = (char **)malloc((count + 1) * sizeof(char));
+	if(!str)
+		return (NULL);
 	i = 0;
-	start = s;
+	start = (char *)s;
+	while (*start && *start == c)
+		start++;
 	while (*s)
 	{
 		if (*s == c)
 		{
 			len = s - start;
-			*str[i] = (char *)malloc((len +1) * sizeof(char));
+			str[i] = (char *)malloc((len +1) * sizeof(char));
 			if (!str[i])
 				return (NULL);
 			ft_memcpy(str[i], start, len);
 			str[i][len] = '\0';
 			i++;
-			start = s + 1;
+			start = (char *)s + 1;
 		}
 		s++;
 	}
+	len = s - start;
+	str[i] = (char *)malloc((len +1) * sizeof(char));
+	if (!str[i])
+		return (NULL);
+	ft_memcpy(str[i], start, len);
+	str[i][len] = '\0';
+	return (str);
+}
+
+static void	ft_free(char **str1)
+{
+	int	i;
+
+	i = 0;
+	if (!str1)
+		
+	while (str1[i] != NULL)
+	{
+		free(str1[i]);
+		str1[i] = NULL;
+		i++;
+	}
+	free(str1);
+	
 }
 
 int	main(void)
 {
 	char	text[] = "Hola-que-tal";
-	char	text1 = '-';
+	char	delimitador = '-';
 	char	**rdo;
+	int		i;
 
-	rdo = ft_split(text, text1);
-	printf("%s", rdo[0]);
-	printf("%s", rdo[1]);
-	printf("%s", rdo[2]);
+	i = 0;
+	rdo = ft_split(text, delimitador);
+	if (!rdo) {
+        printf("Error al dividir la cadena.\n");
+        return 1;
+    }
+
+    printf("Resultado:\n");
+    while (rdo[i] != NULL) 
+	{
+        printf("%s\n", rdo[i]);
+		i++;
+    }
+
+    ft_free(rdo);
 	return (0);
 }
