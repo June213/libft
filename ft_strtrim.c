@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:19:36 by junesalaber       #+#    #+#             */
-/*   Updated: 2023/12/28 09:42:31 by jsalaber         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:57:57 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int main(void)
 // {
-//     const char *cadena = "  ¡ Hola, mundo!   ";
+//     const char *cadena = "¡   Hola, mundo!   ";
 //     const char *patron = " ¡!"; // Caracteres a eliminar
 
 //     char *resultado = ft_strtrim(cadena, patron);
