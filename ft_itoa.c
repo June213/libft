@@ -6,7 +6,7 @@
 /*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 09:50:16 by junesalaber       #+#    #+#             */
-/*   Updated: 2024/01/02 11:43:28 by junesalaber      ###   ########.fr       */
+/*   Updated: 2024/01/02 11:59:54 by junesalaber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ char	*ft_itoa(int n)
 // int	main(void)
 // {
 // 	int	nu = -10;
-// 	printf("%s\n", ft_itoa(nu));
+//  char	*text = ft_itoa(nu);
+// 	printf("%s\n", text);
+// 	free (text);
 // 	return (0);
 // }
