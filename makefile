@@ -6,7 +6,7 @@
 #    By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/13 15:19:15 by jsalaber          #+#    #+#              #
-#    Updated: 2024/01/03 08:18:56 by jsalaber         ###   ########.fr        #
+#    Updated: 2024/01/03 13:06:50 by jsalaber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,22 +20,31 @@ SRCS    = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_putnbr_fd.c \
 		
 OBJS    = $(SRCS:%.c=%.o)
+
+BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+
+BONUS_OBJ	= $(BONUS:%.c=%.o)
+
 CFLAGS  = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(OBJS):%.o:%.c
+$(OBJS) $(BONUS_OBJ):%.o:%.c
 	@cc -c $(CFLAGS) $< -o $@
 	
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
 clean:
-	@rm -rf $(OBJS)
+	@rm -rf $(OBJS) $(BONUS_OBJ)
 	
 fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+bonus: $(OBJS) $(BONUS_OBJ)
+	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJ)
 	
-.PHONY: all clean fclean 
+.PHONY: all clean fclean re bonus
