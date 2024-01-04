@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 13:01:16 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/01/03 13:06:33 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/01/04 11:58:01 by junesalaber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

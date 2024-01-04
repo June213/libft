@@ -6,7 +6,7 @@
 #    By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/13 15:19:15 by jsalaber          #+#    #+#              #
-#    Updated: 2024/01/04 10:58:58 by junesalaber      ###   ########.fr        #
+#    Updated: 2024/01/04 12:03:10 by junesalaber      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS    = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 OBJS    = $(SRCS:%.c=%.o)
 
 BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-		ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 
 BONUS_OBJ	= $(BONUS:%.c=%.o)
 
