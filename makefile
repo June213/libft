@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+         #
+#    By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/13 15:19:15 by jsalaber          #+#    #+#              #
-#    Updated: 2024/01/03 13:06:50 by jsalaber         ###   ########.fr        #
+#    Updated: 2024/01/04 10:58:58 by junesalaber      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

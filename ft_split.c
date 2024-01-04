@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 18:49:44 by junesalaber       #+#    #+#             */
-/*   Updated: 2024/01/03 14:09:47 by jsalaber         ###   ########.fr       */
+/*   Created: 2024/01/04 10:33:47 by junesalaber       #+#    #+#             */
+/*   Updated: 2024/01/04 11:13:13 by junesalaber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ static int	ft_count_words(char const *s, char c)
 {
 	int		subs;
 	int		count;
-	int		i;
 
 	count = 0;
 	subs = 0;
-	i = 0;
 	while (*s)
 	{
 		if (*s != c && !subs)
@@ -35,82 +33,56 @@ static int	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static char	*ft_create_word(char const *s, int start, int len)
+static size_t	ft_numchar(const char *s, char c)
 {
-	char	*word;
-	int		i;
+	size_t	count;
 
-	i = 0;
-	word = (char *)malloc((len - start + 1) * sizeof(char));
-	if (!word)
-		return (NULL);
-	while (len > start)
-	{
-		word[i++] = s[start++];
-	}
-	word[i] = '\0';
-	return (word);
+	count = 0;
+	while (s[count] != c && s[count] != '\0')
+		count++;
+	return (count);
+}
+
+static char	**ft_free(const char **str, size_t len)
+{
+	while (len--)
+		free((void *)str[len]);
+	free(str);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char		**str;
 	size_t		i;
-	int			j;
-	int			a;
+	size_t		len;
+	size_t		subs;
 
-	str = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char));
+	i = 0;
+	subs = 0;
+	len = ft_count_words(s, c);
+	str = (char **)malloc((len + 1) * sizeof(char *));
 	if (!str)
 		return (NULL);
-	i = 0;
-	j = 0;
-	a = -1;
-	while (i < ft_strlen(s))
+	while (i < len)
 	{
-		if (s[i] != c && a < 0)
-			a = i;
-		else if (s[i] == c || (i == ft_strlen(s) && a >= 0) || s[i] == '\0')
-		{
-			str[j++] = ft_create_word(s, a, i);
-			a = -1;
-		}
+		while (*s == c)
+			s++;
+		subs = ft_numchar(s, c);
+		str[i] = (char *)malloc((subs +1) * sizeof(char *));
+		if (!str[i])
+			return (ft_free((const char **)str, len));
+		ft_strlcpy(str[i], s, (subs + 1));
+		s = ft_strchr(s, (int)c);
 		i++;
 	}
-	str[j] = NULL;
+	str[i] = 0;
 	return (str);
-}
-
-int main(void)
-{
-    char *input_string ="0 0 0 0 0 0 0 0 0";
-    char **result = ft_split(input_string, ' ');
-
-    if (result)
-    {
-        // Imprimir las subcadenas resultantes
-        for (int i = 0; result[i] != NULL; i++)
-        {
-            printf("Substring %d:%s\n", i + 1, result[i]);
-        }
-
-        // Liberar la memoria asignada para las subcadenas y el array
-        for (int i = 0; result[i] != NULL; i++)
-        {
-            free(result[i]);
-        }
-        free(result);
-    }
-    else
-    {
-        printf("Error al dividir la cadena.\n");
-    }
-
-    return 0;
 }
 
 // int	main(void)
 // {
-// 	char	text[] = "Hola";
+// 	char	text[] = "Hola-que tal-estas";
 // 	char	delimitador = '-';
 // 	char	**temp;
 // 	char	**rdo;
@@ -123,18 +95,11 @@ int main(void)
 // 	{
 // 		printf("Cadena original: %s\n", text);
 // 		printf("Resultado: \n");
-//     	while (*rdo) 
+//     	while (rdo[i] != NULL) 
 // 		{
-// 			printf("dentrodel while");
 //         	printf("%s\n", rdo[i]);
-//          	i++;
+// 			i++;
 // 		}	
-// 		temp = rdo;
-// 		while (*temp != NULL)
-// 		{
-// 			free(*temp);
-// 			temp++;
-// 		}
 // 		free(rdo);
 // 	}
 // 	else
