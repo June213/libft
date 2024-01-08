@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
+/*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 09:42:49 by jsalaber          #+#    #+#             */
-/*   Updated: 2023/12/27 17:47:40 by junesalaber      ###   ########.fr       */
+/*   Updated: 2024/01/08 10:08:00 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	}
 	return (i);
 }
+
 /*
 int main() {
     char text[] = "Hola que tal";

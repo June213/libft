@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 07:54:30 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/01/03 07:57:52 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/01/08 12:48:46 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	len;
 
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		return ;
+	}
 	len = ft_strlen(s);
 	write(fd, s, len);
 }

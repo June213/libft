@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
+/*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 19:47:13 by junesalaber       #+#    #+#             */
-/*   Updated: 2023/12/25 20:54:06 by junesalaber      ###   ########.fr       */
+/*   Updated: 2024/01/08 10:13:27 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//(str + len) se pone en el inicio y va directamente a laposicion de len
+//(str + len) se pone en el inicio y va directamente a la posicion de len
 
 char	*ft_strrchr(const char *s, int c)
 {

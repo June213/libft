@@ -6,7 +6,7 @@
 /*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 10:33:47 by junesalaber       #+#    #+#             */
-/*   Updated: 2024/01/08 08:27:20 by jsalaber         ###   ########.fr       */
+/*   Updated: 2024/01/08 13:58:07 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ char	**ft_split(char const *s, char c)
 	char		**str;
 	size_t		i;
 	size_t		len;
-	size_t		subs;
 
 	i = 0;
-	subs = 0;
+	if (!s)
+		return (NULL);
 	len = ft_count_words(s, c);
 	str = (char **)malloc((len + 1) * sizeof(char *));
 	if (!str)
@@ -68,11 +68,10 @@ char	**ft_split(char const *s, char c)
 	{
 		while (*s == c)
 			s++;
-		subs = ft_numchar(s, c);
-		str[i] = (char *)malloc((subs +1) * sizeof(char));
+		str[i] = (char *)malloc((ft_numchar(s, c) + 1) * sizeof(char));
 		if (!str[i])
-			return (ft_free((const char **)str, len));
-		ft_strlcpy(str[i], s, (subs + 1));
+			return (ft_free((const char **)str, i));
+		ft_strlcpy(str[i], s, (ft_numchar(s, c) + 1));
 		s = ft_strchr(s, (int)c);
 		i++;
 	}
@@ -82,14 +81,14 @@ char	**ft_split(char const *s, char c)
 
 // int	main(void)
 // {
-// 	char	text[] = "Hola-que tal-estas";
-// 	char	delimitador = '-';
+// 	char	text[] = "Hola!";
+// 	char	delimitador = ' ';
 // 	char	**temp;
 // 	char	**rdo;
 // 	int		i;
 
 // 	i = 0;
-// 	rdo = (char **)malloc(sizeof(char *) * 1);
+// 	rdo = (char **)malloc(sizeof(char *));
 // 	rdo = ft_split(text, delimitador);
 // 	if (rdo)
 // 	{

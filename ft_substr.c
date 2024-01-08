@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
+/*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:02:05 by junesalaber       #+#    #+#             */
-/*   Updated: 2023/12/27 16:51:07 by junesalaber      ###   ########.fr       */
+/*   Updated: 2024/01/08 11:27:29 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	slen;
 	char	*str;
 
-	slen = ft_strlen(s);
 	if (!s)
 		return (NULL);
+	slen = ft_strlen(s);
 	if (start >= slen)
 		return (ft_strdup(""));
 	if (len > slen - start)

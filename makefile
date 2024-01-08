@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+         #
+#    By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/13 15:19:15 by jsalaber          #+#    #+#              #
-#    Updated: 2024/01/04 12:03:10 by junesalaber      ###   ########.fr        #
+#    Updated: 2024/01/08 13:51:48 by jsalaber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,9 @@ SRCS    = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		
 OBJS    = $(SRCS:%.c=%.o)
 
-BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
+BONUS	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
+		ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
+		ft_lstmap_bonus.c \
 
 BONUS_OBJ	= $(BONUS:%.c=%.o)
 
