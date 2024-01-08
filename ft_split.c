@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
+/*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 10:33:47 by junesalaber       #+#    #+#             */
-/*   Updated: 2024/01/04 11:48:09 by junesalaber      ###   ########.fr       */
+/*   Updated: 2024/01/08 08:27:20 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char	**ft_split(char const *s, char c)
 		while (*s == c)
 			s++;
 		subs = ft_numchar(s, c);
-		str[i] = (char *)malloc((subs +1) * sizeof(char *));
+		str[i] = (char *)malloc((subs +1) * sizeof(char));
 		if (!str[i])
 			return (ft_free((const char **)str, len));
 		ft_strlcpy(str[i], s, (subs + 1));

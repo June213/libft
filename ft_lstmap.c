@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junesalaberria <junesalaberria@student.    +#+  +:+       +#+        */
+/*   By: jsalaber <jsalaber@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 13:07:31 by jsalaber          #+#    #+#             */
-/*   Updated: 2024/01/04 12:02:40 by junesalaber      ###   ########.fr       */
+/*   Updated: 2024/01/08 08:38:08 by jsalaber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,25 +32,38 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*))
 	return (new);
 }
 
-// void print_int(void *content) {
-//     printf("%d\n", *(int *)content);
+// void	*double_content(void *content)
+// {
+// 	int	*value;
+// 	int	*doubled;
+
+// 	value = (int *)content;
+// 	doubled = (int *)malloc(sizeof(int));
+// 	if (!doubled)
+// 		return (NULL);
+// 	*doubled = (*value) * 2;
+// 	return (doubled);
 // }
 
-// int main(void) 
+// int	main(void)
 // {
-// 	t_list *first = ft_lstnew((void *)1);
-// 	t_list *second = ft_lstnew((void *)2);
-//     int *number1 = malloc(sizeof(int));
-// 	int *number2 = malloc(sizeof(int));
+// 	t_list	*lst = ft_lstnew((void *);
+// 	t_list	*mapped_list;
 
-//     *number1 = 42;
-// 	*number2 = 100;
-//     first->content = number1;
-//     first->next = second;
-// 	second->content = number2;
-// 	second->next = NULL;
+// 	lst = malloc(sizeof(int)));
+// 	*((int *)lst->content) = 5;
+// 	ft_lstadd_back(&lst, ft_lstnew((void *)malloc(sizeof(int))));
+// 	*((int *)(lst->next->content)) = 10;
+// 	ft_lstadd_back(&lst, ft_lstnew((void *)malloc(sizeof(int))));
+// 	*((int *)(lst->next->next->content)) = 15;
+// 	mapped_list = ft_lstmap(lst, &double_content, &free);
+// 	while (mapped_list)
+// 	{
+// 		printf("%d\n", *((int *)mapped_list->content));
+// 		mapped_list = mapped_list->next;
+// 	}
+// 	ft_lstclear(&lst, &free);
+// 	ft_lstclear(&mapped_list, &free);
 
-//     ft_lstiter(first, print_int); 
-
-//     return 0;
+// 	return (0);
 // }
