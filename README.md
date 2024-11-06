@@ -10,6 +10,10 @@ El proyecto incluye implementaciones de funciones como:
 
 Estas funciones cubren tareas básicas de manipulación de cadenas, manejo de memoria, y operaciones de entrada/salida, todas ellas implementadas de manera eficiente y optimizada.
 
+## Verificación
+
+Cada función implementada tiene un **main** comentado que te permite comprobar su funcionamiento y probarlas de forma sencilla.
+
 ## Uso
 
 Para compilar la biblioteca, puedes ejecutar el comando `make` dentro del directorio del repositorio.
